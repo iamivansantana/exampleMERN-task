@@ -12,7 +12,7 @@ const Listado = () => {
     },[]);
 
     //Revisar si proyectos tiene contenido
-    if(proyectos.length === 0) return null;
+    if(proyectos.length === 0) return <p>No Hay Proyectos</p>
 
     
 
@@ -21,8 +21,8 @@ const Listado = () => {
             <ul className="Listado-proyectos">
                 {proyectos.map(proyecto=>(
                     <Proyecto 
-                    key={proyecto.id}
-                        proyectos={proyecto} 
+                        key={proyecto.id}
+                        proyecto={proyecto} 
                     />
                 ))}
             </ul>  

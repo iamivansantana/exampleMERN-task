@@ -1,13 +1,20 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import proyectoContext from '../../context/proyectos/proyectoContext'
 
-const Proyecto = ({proyectos}) => {
+
+const Proyecto = ({proyecto}) => {
+
+    //Obtener el context
+    const {proyectoActual } = useContext(proyectoContext);
+
     return (
         <>
             <li>
                 <button
                     type="button"
                     className="btn btn-blank"
-                >{proyectos.nombre}</button>
+                    onClick={()=>proyectoActual(proyecto.id)}
+                >{proyecto.nombre}</button>
             </li>            
         </>
     )
