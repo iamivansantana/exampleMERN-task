@@ -63,7 +63,7 @@ const FromTarea = () => {
 
   return (
     <>
-    <h1>ioss</h1>
+    
       <div className="formulario">
         <form
           onSubmit={onSubmit}
