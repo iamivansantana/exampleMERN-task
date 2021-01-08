@@ -6,6 +6,7 @@ import {
     AGREGAR_TAREA,
     VALIDAR_TAREA,
     ELIMINAR_TAREA,
+    ESTADO_TAREA
 } from '../../types';
 
 
@@ -56,13 +57,21 @@ const TareaState = (props) => {
         })
     }
 
-    //Eliminar Tarea Seleeccionada
+    //Eliminar Tarea Seleeccionada por id
     const eliminarTarea = (id)=>{
         dispatch({
             type: ELIMINAR_TAREA,
             payload: id
         })
 
+    }
+
+    //Cambia el estado de cada tarea 
+    const cambiaEstadoTarea = (tarea)=>{
+        dispatch({
+            type: ESTADO_TAREA,
+            payload: tarea
+        })
     }
     
     
@@ -76,7 +85,8 @@ const TareaState = (props) => {
         obtenerTareas,
         agregarTarea,
         validarTarea,
-        eliminarTarea
+        eliminarTarea,
+        cambiaEstadoTarea
 
         }}
     >
