@@ -6,7 +6,7 @@ import tareaContext from "../../context/tareas/tareaContext";
 const Tarea = ({ tarea }) => {
 
   //Obtener Context de Tarea
-  const {eliminarTarea, obtenerTareas,cambiaEstadoTarea} = useContext(tareaContext);
+  const {eliminarTarea, obtenerTareas,cambiaEstadoTarea,guardarTareaActual} = useContext(tareaContext);
 
   //Obtener Context de Proyecto
   const {proyecto} = useContext(proyectoContext);
@@ -33,6 +33,12 @@ const Tarea = ({ tarea }) => {
     cambiaEstadoTarea(tarea);
   }
 
+  //Agrega una tarea actual cuando el usuario desea editarla
+  const seleccionarTarea = (tarea)=>{
+    guardarTareaActual(tarea);
+    
+  }
+
   return (
     <>
       <li className="tarea sombra">
@@ -57,7 +63,11 @@ const Tarea = ({ tarea }) => {
           )}
         </div>
         <div className="acciones">
-          <button type="button" className="btn btn-primario">
+          <button 
+            type="button" 
+            className="btn btn-primario"
+            onClick={()=>seleccionarTarea(tarea)}  
+          >
             Editar
           </button>
           <button 
