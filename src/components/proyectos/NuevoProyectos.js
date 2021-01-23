@@ -59,6 +59,7 @@ const NuevoProyectos = () => {
                 name="nombre"
                 value={nombre}
                 onChange={onChangeProyecto}
+                autoComplete="off"
               />
               <input
                 type="submit"

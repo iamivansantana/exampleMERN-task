@@ -13,7 +13,6 @@ const FromTarea = () => {
     agregarTarea,
     validarTarea,
     errorTarea,
-    obtenerTareas,
     tareaSeleccionada,
     actualizarTArea,
     limpiarTarea
@@ -66,8 +65,7 @@ const FromTarea = () => {
     //if para saber si se agrega o se modifica
     if (tareaSeleccionada === null) {
       //agregar nueva tarea al state de tareas
-      tarea.proyectoId = proyectoActual.id;
-      tarea.estado = false;
+      tarea.proyecto = proyectoActual._id;
       agregarTarea(tarea);
     } else {
 
@@ -83,7 +81,7 @@ const FromTarea = () => {
     
 
     //obtener y filtrar tareas del proyecto actual
-    obtenerTareas(proyectoActual.id);
+    // obtenerTareas(proyectoActual.id);
 
     //reiniciar el form
     setTarea({
